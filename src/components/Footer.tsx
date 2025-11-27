@@ -1,6 +1,11 @@
 import { Facebook, Instagram, Twitter, Youtube, Mail, Phone, MapPin } from 'lucide-react';
+import { Page } from '../App';
 
-export function Footer() {
+interface FooterProps {
+  setCurrentPage: (page: Page) => void;
+}
+
+export function Footer({ setCurrentPage }: FooterProps) {
   return (
     <footer className="bg-neutral-950 border-t border-neutral-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -32,14 +37,26 @@ export function Footer() {
             <h3 className="text-white mb-4">Quick Links</h3>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-neutral-400 hover:text-orange-600 transition-colors">
+                <button 
+                  onClick={() => {
+                    setCurrentPage('about');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className="text-neutral-400 hover:text-orange-600 transition-colors"
+                >
                   About Us
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#programs" className="text-neutral-400 hover:text-orange-600 transition-colors">
+                <button 
+                  onClick={() => {
+                    setCurrentPage('classes');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className="text-neutral-400 hover:text-orange-600 transition-colors"
+                >
                   Programs
-                </a>
+                </button>
               </li>
               <li>
                 <a href="#trainers" className="text-neutral-400 hover:text-orange-600 transition-colors">
@@ -47,14 +64,26 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#pricing" className="text-neutral-400 hover:text-orange-600 transition-colors">
+                <button 
+                  onClick={() => {
+                    setCurrentPage('membership');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className="text-neutral-400 hover:text-orange-600 transition-colors"
+                >
                   Pricing
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#" className="text-neutral-400 hover:text-orange-600 transition-colors">
-                  Blog
-                </a>
+                <button 
+                  onClick={() => {
+                    setCurrentPage('contact');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className="text-neutral-400 hover:text-orange-600 transition-colors"
+                >
+                  Contact
+                </button>
               </li>
             </ul>
           </div>
@@ -64,19 +93,37 @@ export function Footer() {
             <h3 className="text-white mb-4">Support</h3>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-neutral-400 hover:text-orange-600 transition-colors">
+                <button 
+                  onClick={() => {
+                    setCurrentPage('contact');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className="text-neutral-400 hover:text-orange-600 transition-colors"
+                >
                   Help Center
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#" className="text-neutral-400 hover:text-orange-600 transition-colors">
+                <button 
+                  onClick={() => {
+                    setCurrentPage('membership');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className="text-neutral-400 hover:text-orange-600 transition-colors"
+                >
                   FAQs
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#" className="text-neutral-400 hover:text-orange-600 transition-colors">
+                <button 
+                  onClick={() => {
+                    setCurrentPage('contact');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className="text-neutral-400 hover:text-orange-600 transition-colors"
+                >
                   Contact Us
-                </a>
+                </button>
               </li>
               <li>
                 <a href="#" className="text-neutral-400 hover:text-orange-600 transition-colors">

@@ -1,4 +1,9 @@
 import { Check } from 'lucide-react';
+import { Page } from '../App';
+
+interface PricingProps {
+  setCurrentPage: (page: Page) => void;
+}
 
 const plans = [
   {
@@ -48,7 +53,7 @@ const plans = [
   },
 ];
 
-export function Pricing() {
+export function Pricing({ setCurrentPage }: PricingProps) {
   return (
     <section id="pricing" className="py-24 bg-neutral-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -143,6 +148,10 @@ export function Pricing() {
               </ul>
 
               <button
+                onClick={() => {
+                  setCurrentPage('membership');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
                 className={`w-full py-4 rounded-full transition-all ${
                   plan.popular
                     ? 'bg-white text-orange-600 hover:bg-neutral-100'

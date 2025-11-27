@@ -1,7 +1,7 @@
 
-  # Fitness Website Design for ITGY401 Group 12
+  # Fitness Website Design
 
-  This is a code bundle for Fitness Website Design. The original code and design is available at https://www.figma.com/design/s9ScDufnIRayoId4liHQ0g/Fitness-Website-Design.
+  This is a code bundle for Fitness Website Design. The original project is available at https://www.figma.com/design/s9ScDufnIRayoId4liHQ0g/Fitness-Website-Design.
 
   ## Running the code
 

@@ -1,9 +1,20 @@
 import { ArrowRight, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { Page } from '../App';
 
-export function Hero() {
+interface HeroProps {
+  setCurrentPage: (page: Page) => void;
+}
+
+export function Hero({ setCurrentPage }: HeroProps) {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleNavClick = (page: Page) => {
+    setCurrentPage(page);
+    setMenuOpen(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <div className="relative min-h-screen flex flex-col">
@@ -13,7 +24,12 @@ export function Hero() {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <span className="text-white text-2xl tracking-tight">FITPRO</span>
+              <button 
+                onClick={() => handleNavClick('home')}
+                className="text-white text-2xl tracking-tight hover:text-orange-600 transition-colors"
+              >
+                FITPRO
+              </button>
             </div>
 
             {/* Desktop Navigation */}
@@ -27,10 +43,16 @@ export function Hero() {
               <a href="#pricing" className="text-neutral-300 hover:text-white transition-colors">
                 Pricing
               </a>
-              <a href="#about" className="text-neutral-300 hover:text-white transition-colors">
+              <button 
+                onClick={() => handleNavClick('about')}
+                className="text-neutral-300 hover:text-white transition-colors"
+              >
                 About
-              </a>
-              <button className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-full transition-colors">
+              </button>
+              <button 
+                onClick={() => handleNavClick('membership')}
+                className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-full transition-colors"
+              >
                 Join Now
               </button>
             </div>
@@ -58,10 +80,16 @@ export function Hero() {
               <a href="#pricing" className="block text-neutral-300 hover:text-white transition-colors">
                 Pricing
               </a>
-              <a href="#about" className="block text-neutral-300 hover:text-white transition-colors">
+              <button 
+                onClick={() => handleNavClick('about')}
+                className="block w-full text-left text-neutral-300 hover:text-white transition-colors"
+              >
                 About
-              </a>
-              <button className="w-full bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-full transition-colors">
+              </button>
+              <button 
+                onClick={() => handleNavClick('membership')}
+                className="w-full bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-full transition-colors"
+              >
                 Join Now
               </button>
             </div>
@@ -99,13 +127,19 @@ export function Hero() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 rounded-full transition-all hover:scale-105 flex items-center justify-center gap-2">
+              <button 
+                onClick={() => handleNavClick('membership')}
+                className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 rounded-full transition-all hover:scale-105 flex items-center justify-center gap-2"
+              >
                 Start Free Trial
                 <ArrowRight size={20} />
               </button>
-              <button className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full hover:bg-white hover:text-neutral-950 transition-all">
+              <a 
+                href="#programs"
+                className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full hover:bg-white hover:text-neutral-950 transition-all text-center"
+              >
                 View Programs
-              </button>
+              </a>
             </div>
 
             {/* Stats */}
