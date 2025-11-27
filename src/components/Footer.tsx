@@ -145,13 +145,13 @@ export function Footer({ setCurrentPage }: FooterProps) {
               <li className="flex items-start gap-3">
                 <MapPin size={20} className="text-orange-600 mt-0.5 flex-shrink-0" />
                 <span className="text-neutral-400">
-                  123 Fitness Street<br />
-                  Los Angeles, CA 90001
+                  Ilisan-Remo LGA. Babcock University.<br />
+                  Ogun State, Nigeria.
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={20} className="text-orange-600 flex-shrink-0" />
-                <span className="text-neutral-400">(555) 123-4567</span>
+                <span className="text-neutral-400">+234 - 123 - 456 - 7890</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={20} className="text-orange-600 flex-shrink-0" />
